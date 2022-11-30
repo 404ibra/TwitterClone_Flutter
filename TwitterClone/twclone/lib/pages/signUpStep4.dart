@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+
+import 'package:flutter/material.dart';
 import 'package:twclone/utils/customColors.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+class SignUpStep4 extends StatefulWidget {
+  const SignUpStep4({super.key});
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  State<SignUpStep4> createState() => _SignUpStep4State();
 }
 
-class _SignUpState extends State<SignUp> {
+class _SignUpStep4State extends State<SignUpStep4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,63 +19,59 @@ class _SignUpState extends State<SignUp> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              titleText("Create account"),
-              customSignupTextField("Name"),
-              _customSizedBox(26),
-              customSignupTextField("E-mail"),
-              useAnotherInfo(),
-              birthText(),
-              // Birth Date picker is here!!..
-              _customSizedBox(250),
+              titleText("We sent you a code"),
+              verifyInfo(),
+              _customSizedBox(60),
+              customSignupTextField("Verification code"),
+              againCode(),
+              _customSizedBox(330),
               customSignupElevatedButton("Next"),
             ],
           ),
         ));
   }
 
-  Padding birthText() {
+
+  //verification info
+  Padding verifyInfo() {
     return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Text.rich(TextSpan(children: [
-              TextSpan(
-                  text: "Birth date",
-                  style: textStyleBirthDate()),
+
                       
-              TextSpan(text: "\n\nThis will not be displayed publicly. Even if this",
-              style:textStyleBirthDateDescription() ),
-              TextSpan(text: "\naccount is for a business, pet or anything else, you must verify your own age.",
-              style: textStyleBirthDateDescription())
+              TextSpan(text: "Enter it below to verify",
+              style:textStyleInfoVerifyMail() ),
+              TextSpan(text: "\nibra.aktas@gmail.com",
+              style: textStyleInfoVerifyMail())
             ])),
           );
   }
 
-  TextStyle textStyleBirthDate() {
-    return TextStyle(
-                      color: CustomColors.blackText,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold);
-  }
 
-    TextStyle textStyleBirthDateDescription() {
+//text style verify mail 
+    TextStyle textStyleInfoVerifyMail() {
     return TextStyle(
                       color: CustomColors.privacyTextColor,
                       fontSize: 14,
                       );
   }
 
-  Padding useAnotherInfo() {
+//text didnt rexeive code
+  Padding againCode() {
     return Padding(
-      padding: const EdgeInsets.only(left: 295.0),
+      padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: TextButton(
           onPressed: () {},
           child: Text(
-            "Use phone",
+            "Didn't receive email?",
             style:
                 TextStyle(color: CustomColors.importantWordColor, fontSize: 14),
           )),
     );
   }
 
+
+//verification code text field
   Center customSignupTextField(String fieldText) {
     return Center(
       child: Container(
@@ -100,7 +98,7 @@ class _SignUpState extends State<SignUp> {
         borderRadius: BorderRadius.circular(2));
   }
 
-//title Text for create account
+//title Text for create account// 
   Padding titleText(String titleText) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -124,7 +122,7 @@ class _SignUpState extends State<SignUp> {
   AppBar appBar(BuildContext context) {
     return AppBar(
         title: Text(
-          "Step 1/5",
+          "Step 4/5",
           style: TextStyle(
               color: CustomColors.blackText,
               fontSize: 16,
@@ -136,15 +134,17 @@ class _SignUpState extends State<SignUp> {
         toolbarHeight: 50,
         leading: IconButton(
           onPressed: () {
-            Navigator.pushNamed(context, "/welcomePage");
+            Navigator.pushNamed(context, "/signUp");
           },
-          icon: Icon(Icons.close),
+          icon: Icon(Icons.arrow_back_rounded),
           iconSize: 19,
           color: CustomColors.appleIconColor,
         ));
   }
 
 
+
+//next button
     Center customSignupElevatedButton(String signUpElevatedButtonText) {
     return Center(
       child: Align(
@@ -154,7 +154,7 @@ class _SignUpState extends State<SignUp> {
           width: 354,
           child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, "/signUp4");
+                // Navigator.pushNamed(context, "/signUp");
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: CustomColors.blackElevatedButton,

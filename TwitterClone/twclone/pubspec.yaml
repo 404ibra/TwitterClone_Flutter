@@ -38,6 +38,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^10.2.1
   community_material_icon: ^5.9.55
+  flutterfire_cli: ^0.2.7
+  firebase_core: ^2.3.0
 
 dev_dependencies:
   flutter_test:

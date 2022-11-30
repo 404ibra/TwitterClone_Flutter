@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twclone/pages/auth/signUp.dart';
+import 'package:twclone/pages/signUpStep4.dart';
 import 'package:twclone/pages/welcome_screen.dart';
 import 'package:twclone/utils/customColors.dart';
 
@@ -16,12 +17,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         "/signUp": (context) => SignUp(),
+        "/signUp4":(context) => SignUpStep4(),
         "/welcomePage":(context) => WelcomeScreen(),
       },
       theme: ThemeData(
         backgroundColor: CustomColors.twitterWhite
       ),
-      home: WelcomeScreen()
+      home: SignUpStep4()
 
     );
   }

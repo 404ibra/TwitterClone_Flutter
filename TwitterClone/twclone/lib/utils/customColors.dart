@@ -8,4 +8,6 @@ class  CustomColors {
   static const appleIconColor = Color(0xfff000000);
   static const privacyTextColor = Color(0xfff71767B);
   static const importantWordColor = Color(0xfff1D9BF0);
+  static const blackText = Color(0xfff000000);
+  static const blackElevatedButton = Color(0xfff0F1419);
 }

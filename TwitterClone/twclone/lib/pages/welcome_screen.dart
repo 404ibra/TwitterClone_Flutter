@@ -14,7 +14,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     String twitterIcon = "assets/images/twitter_icon_blue.png";
-    return Scaffold(body: appBody(height, twitterIcon));
+    return Scaffold(
+      body: appBody(height, twitterIcon));
   }
 
   Padding appBody(double height, String twitterIcon) {
@@ -41,7 +42,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       ]),
     );
   }
-
 
 //controller top twitter icon  heigh and icon...
   Container twitterIconController(double height, String twitterIcon) {
@@ -184,7 +184,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         height: 40,
         width: 300,
         child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, "/signUp");
+            },
             style: ElevatedButton.styleFrom(
                 backgroundColor: CustomColors.twitterBlue,
                 shape: RoundedRectangleBorder(
@@ -196,8 +198,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       ),
     );
   }
-
-
 
 //SizedBox  normal 2x 3x and can set..
   SizedBox customSizedBox() => SizedBox(

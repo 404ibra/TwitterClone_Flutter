@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
         "/welcomePage":(context) => WelcomeScreen(),
       },
       theme: ThemeData(
-        backgroundColor: CustomColors.twitterWhite
+        backgroundColor: CustomColors.twitterWhite,
+        appBarTheme: AppBarTheme(color: Colors.white, elevation: 0),
       ),
       home: HomePage()
 

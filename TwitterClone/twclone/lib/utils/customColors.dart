@@ -12,4 +12,9 @@ class  CustomColors {
   static const blackElevatedButton = Color(0xfff0F1419);
   static const tabbarDeactiviteButtonColor = Color(0xfff687684);
   static const tabbarSelectedItemColor = Color(0xfff4C9EEB);
+  static const usernameDarkenColor = Color(0xfff687684);
+  static const commentIconColor = Color(0xfff687684);
+  static const retweetIconColor = Color(0xfff59BC6C);
+  static const favIconColor = Color(0xfffCE395F);
+  static const shareIconColor = Color(0xfff687684);
 }
